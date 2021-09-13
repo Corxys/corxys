@@ -1,0 +1,69 @@
+@use '../../styles/vars';
+
+.whoami {
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__text, &__skills {
+    max-width: calc(((100vw - 120px) / 6) * 2);
+  }
+
+  &__skills {
+    position: relative;
+    background-color: vars.$color-background-light;
+    border-radius: 10px;
+    margin-left: 30px;
+    padding: 20px;
+    font-size: 0.938rem;
+    font-weight: bold;
+    font-family: vars.$font-mono;
+
+    &__title {
+      &--blue {
+        color: vars.$color-blue;
+      }
+  
+      &--red {
+        color: vars.$color-red;
+      }
+  
+      &--green {
+        color: vars.$color-green;
+      }
+  
+      &--yellow {
+        color: vars.$color-yellow;
+      }
+    }  
+
+    &__categories {
+      padding-left: 0.938rem;
+      margin: 0.625rem 0rem;
+      border-left: #FFFFFF10 1px solid;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 15px;
+      font-weight: normal;
+      font-family: vars.$font-sans;
+    }
+
+    &__subtitle {
+      margin: 10px 0px;
+    }
+
+    &__item {
+      margin: 5px 15px 5px 0px;
+
+      img {
+        height: 23px;
+        margin-right: 7px;
+      }
+    }
+  }
+}

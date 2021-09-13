@@ -25,10 +25,30 @@ button {
   }
 }
 
-.home {
+h1 {
+  font-family: vars.$font-mono;
+  color: vars.$color-white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+
+  span {
+    color: vars.$color-blue;
+    font-size: 1.188rem;
+    font-weight: normal;
+  }
+}
+
+h2 {
+  font-family: vars.$font-mono;
+  font-size: 0.938rem;
+  color: vars.$color-blue;
+}
+
+.home, .whoami {
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 0px calc(100% / 6);
 }
