@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreRegular.otf');
+}
+
 $color-background: #272822;
 $color-text: #B9B4A7;
 $color-text-hover: rgba($color-text, 0.65);
 $color-blue: #66D9EF;
+$color-blue-hover: #58bdd1;
 $font-mono: 'Consolas', monospace;
+$font-sans: 'Calibre', sans-serif;

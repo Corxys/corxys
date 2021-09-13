@@ -4,5 +4,31 @@
 body {
   background-color: vars.$color-background;
   color: vars.$color-text;
-  font-size: 0.813rem;
+  font-size: 1.063rem;
+  font-family: vars.$font-sans;
+}
+
+button {
+  width: calc(100% / 2);
+  padding: 15px 20px;
+  background-color: vars.$color-blue;
+  border-radius: 50px;
+  color: vars.$color-background;
+  font-family: vars.$font-mono;
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-align: center;
+  transition: 0.2s background-color;
+
+  &:hover {
+    background-color: vars.$color-blue-hover;
+  }
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px calc(100% / 6);
 }

@@ -1,0 +1,26 @@
+@use '../../styles/vars';
+
+.home {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(((100vw - 120px) /6) * 2);
+
+    &__name {
+      margin: 1.875rem 0rem;
+      font-family: vars.$font-mono;
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 3.8rem;
+
+      &--blue {
+        color: vars.$color-blue;
+      }
+    }
+
+    &__button {
+      margin-top: 3.125rem;
+    }
+  }
+}
