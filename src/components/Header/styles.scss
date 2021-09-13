@@ -1,0 +1,51 @@
+@use '../../styles/vars';
+
+.header {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.875rem 3.75rem;
+  font-family: vars.$font-mono;
+
+  &__logo {
+    transition: 0.2s color;
+
+    &:hover {
+      color: vars.$color-text-hover;
+    }
+
+    &--blue {
+      color: vars.$color-blue;
+    }
+  }
+
+  &__navbar {
+    &__items {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__item {
+      margin: 0rem 0.938rem;
+      transition: 0.2s color;
+
+      &:hover {
+        color: vars.$color-text-hover;
+      }
+
+      &:first-child {
+        margin-left: 0rem;
+      }
+
+      &:last-child {
+        margin-right: 0rem;
+      }
+
+      &--blue {
+        color: vars.$color-blue;
+      }
+    }
+  }
+}
