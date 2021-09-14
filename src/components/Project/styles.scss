@@ -1,0 +1,75 @@
+@use '../../styles/vars';
+
+.project {
+  position: relative;
+  height: 450px;
+
+  &__header {
+    &__title {
+      font-family: vars.$font-mono;
+      color: vars.$color-blue; 
+      font-size: 1.875rem;
+      font-weight: bold;
+      margin: 0.313rem 0rem 1.875rem 0rem;
+    }
+  }
+
+  &__description {
+    background-color: vars.$color-background-light;
+    border-radius: 10px;
+    padding: 1.25rem;
+    max-width: calc(((100vw - 120px) / 6) * 2);
+    font-size: 0.938rem;
+
+    &__tools {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-family: vars.$font-mono;
+      font-size: 0.813rem;
+      margin-top: 1.25rem;
+    }
+
+    &__tool {
+      margin-right: 0.938rem;
+
+      &:last-child {
+        margin-right: 0rem;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.875rem;
+    font-size: 0.875rem;
+    color: vars.$color-white;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0.938rem;
+
+    img {
+      height: 19px;
+    }
+
+    &__text {
+      margin: 0.313rem 0rem 0rem 0.938rem;
+    }
+  }
+
+  &__image {
+    z-index: -10;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: vars.$color-text;
+    width: calc(((100vw - 120px) / 6) * 3);
+    height: 100%;
+    border-radius: 30px;
+  }
+}

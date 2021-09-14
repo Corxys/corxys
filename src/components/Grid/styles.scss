@@ -1,0 +1,43 @@
+.lines {
+  z-index: -10;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: calc(100vw - (120px + 7px));
+  margin: 0px 60px;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 300vh;
+  background-color: #ffffff10;
+  
+  &--first {
+    left: 0px;
+  }
+
+  &--second {
+    left: calc(100% / 6);
+  }
+
+  &--third {
+    left: calc((100% / 6) * 2);
+  }
+
+  &--fourth {
+    left: calc((100% / 6) * 3);
+  }
+
+  &--fifth {
+    left: calc((100% / 6) * 4);
+  }
+
+  &--sixth {
+    left: calc((100% / 6) * 5);
+  }
+
+  &--last {
+    right: 0px;
+  }
+}
