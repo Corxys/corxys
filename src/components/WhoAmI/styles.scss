@@ -21,6 +21,8 @@
     font-family: vars.$font-mono;
 
     &__title {
+      font-size: 0.813rem;
+
       &--blue {
         color: vars.$color-blue;
       }
