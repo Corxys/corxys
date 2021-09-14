@@ -6,9 +6,9 @@ import Title from '../../partials/Title';
 
 const Contact = () => {
   return (
-    <div id="contact" className="contact">
+    <section id="contact" className="contact">
       <div className="contact__title">
-        <Title number={ '03.' } text={ 'Contact' } />
+        <Title number={ '02.' } text={ 'Contact' } />
       </div>
       <div className="contact__container">
         <p className="contact__text">
@@ -36,7 +36,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 };
 

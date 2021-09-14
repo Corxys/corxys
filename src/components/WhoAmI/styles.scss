@@ -7,14 +7,18 @@
   }
 
   &__text, &__skills {
-    max-width: calc(((100vw - 120px) / 6) * 2);
+    width: calc((100% / 4) * 2)
+    // max-width: calc(((100vw - 120px) / 6) * 2);
+  }
+
+  &__text {
+    padding-right: 30px;
   }
 
   &__skills {
     position: relative;
     background-color: vars.$color-background-light;
     border-radius: 10px;
-    margin-left: 30px;
     padding: 20px;
     font-size: 0.938rem;
     font-weight: bold;

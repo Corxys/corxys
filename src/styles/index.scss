@@ -28,13 +28,13 @@ button {
   border-radius: 50px;
   color: vars.$color-background;
   font-family: vars.$font-mono;
-  font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 0.813rem;
   text-align: center;
-  transition: 0.2s background-color;
+  transition: 0.2s all;
   margin-top: 3.125rem;
-
+  
   &:hover {
+    font-weight: bold;
     background-color: vars.$color-blue-hover;
   }
 }
@@ -44,7 +44,7 @@ h1 {
   color: vars.$color-white;
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 3.125rem;
+  margin-bottom: 3.75rem;
 
   span {
     color: vars.$color-blue;
@@ -59,7 +59,7 @@ h2 {
   color: vars.$color-blue;
 }
 
-.home, .whoami, .projects, .contact {
+.home, .whoami, .experiences, .projects, .contact {
   height: 100vh;
   display: flex;
   flex-direction: column;

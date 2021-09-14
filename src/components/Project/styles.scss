@@ -18,7 +18,7 @@
     background-color: vars.$color-background-light;
     border-radius: 10px;
     padding: 1.25rem;
-    max-width: calc(((100vw - 120px) / 6) * 2);
+    width: calc((100% / 4) * 2);
     font-size: 0.938rem;
 
     &__tools {
@@ -68,7 +68,7 @@
     top: 0px;
     right: 0px;
     background-color: vars.$color-text;
-    width: calc(((100vw - 120px) / 6) * 3);
+    width: calc((100% / 4) * 3);
     height: 100%;
     border-radius: 30px;
   }

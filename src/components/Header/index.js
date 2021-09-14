@@ -24,23 +24,16 @@ const Header = () => {
             </a>
           </li>
           <li className="header__navbar__item">
-            <a href="#experiences">
-              <span className="header__navbar__item--blue">
-                01.
-              </span> Expériences
-            </a>
-          </li>
-          <li className="header__navbar__item">
             <a href="#projects">
               <span className="header__navbar__item--blue">
-                02.
+                01.
               </span> Projets
             </a>
           </li>
           <li className="header__navbar__item">
             <a href="#contact">
               <span className="header__navbar__item--blue">
-                03.
+                02.
               </span> Contact
             </a>
           </li>

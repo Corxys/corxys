@@ -8,14 +8,14 @@ import Project from '../Project';
 
 const Projects = () => {
   return (
-    <div className="projects">
+    <section id="projects" className="projects">
       <div className="projects__title">
-        <Title number={ '02.' } text={ 'Projets' } />
+        <Title number={ '01.' } text={ 'Projets' } />
       </div>
       <div className="projects__container">
         <Project />
       </div>
-    </div>
+    </section>
   );
 };
 
