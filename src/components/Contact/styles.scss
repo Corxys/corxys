@@ -1,0 +1,30 @@
+@use '../../styles/vars';
+
+.contact {
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(((100vw - 120px) / 6) * 2);
+  }
+
+  &__infos {
+    max-width: calc((100vw - 120px) / 6);
+    margin-left: calc((100vw - 120px) / 6);
+
+    &__email, &__tel {
+        margin-bottom: 1.563rem;
+      
+        &__title {
+        font-family: vars.$font-mono;
+        font-size: 0.813rem;
+        font-weight: bold;
+        margin-bottom: 0.938rem;
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Header from '../Header';
 import Home from '../Home';
 import WhoAmI from '../WhoAmI';
 import Projects from '../Projects';
+import Contact from '../Contact';
 
 const Portfolio = () => {
   return (
@@ -17,6 +18,7 @@ const Portfolio = () => {
         <Home />
         <WhoAmI />
         <Projects />
+        <Contact />
       </div>
     </div>
   );

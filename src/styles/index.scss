@@ -32,6 +32,7 @@ button {
   font-size: 0.875rem;
   text-align: center;
   transition: 0.2s background-color;
+  margin-top: 3.125rem;
 
   &:hover {
     background-color: vars.$color-blue-hover;
@@ -58,7 +59,7 @@ h2 {
   color: vars.$color-blue;
 }
 
-.home, .whoami, .projects {
+.home, .whoami, .projects, .contact {
   height: 100vh;
   display: flex;
   flex-direction: column;
