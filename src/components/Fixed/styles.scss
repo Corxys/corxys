@@ -1,0 +1,45 @@
+@use '../../styles/vars';
+
+.fixed {
+  &__socials {
+    position: fixed;
+    left: 60px;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__social {
+    margin-top: 0.938rem;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  &__contact {
+    position: fixed;
+    right: calc(-119px + 60px);
+    bottom: calc(117px + 60px);
+    font-family: vars.$font-mono;
+    font-size: 0.813rem;
+    transform: rotate(-90deg);
+
+    &--blue {
+      color: vars.$color-blue;
+    }
+
+    &--red {
+      color: vars.$color-red;
+    }
+
+    &--yellow {
+      color: vars.$color-yellow;
+      transition: 0.2s color;
+
+      &:hover {
+        color: vars.$color-yellow-hover;
+      }
+    }
+  }
+}
