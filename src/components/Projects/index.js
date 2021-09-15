@@ -15,6 +15,11 @@ const Projects = () => {
       <div className="projects__container">
         <Project />
       </div>
+      <div className="projects__pagination">
+        <div className="projects__page projects__page--active"></div>
+        <div className="projects__page"></div>
+        <div className="projects__page"></div>
+      </div>
     </section>
   );
 };

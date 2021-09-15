@@ -1,0 +1,25 @@
+@use '../../styles/vars';
+
+.projects {
+  position: relative;
+
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2.5em;
+  }
+
+  &__page {
+    height: 10px;
+    width: 10px;
+    background-color: vars.$color-text;
+    border-radius: 25px;
+    margin: 0rem 0.625rem;
+    cursor: pointer;
+
+    &--active {
+      background-color: vars.$color-blue;
+    }
+  }
+}
