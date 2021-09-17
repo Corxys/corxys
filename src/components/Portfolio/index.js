@@ -13,9 +13,9 @@ import Fixed from '../Fixed';
 const Portfolio = () => {
   return (
     <div className="portfolio">
-      <Grid />
       <Header />
       <div className="portfolio__container">
+        <Grid />
         <Home />
         <WhoAmI />
         <Projects />

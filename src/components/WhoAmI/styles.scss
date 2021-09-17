@@ -1,21 +1,21 @@
 @use '../../styles/vars';
 
 .whoami {
+  grid-auto-rows: auto;
+  
   &__container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% / 4) * 2));
+    grid-column: 1 / -1;
   }
-
-  &__text, &__skills {
-    width: calc((100% / 4) * 2)
-    // max-width: calc(((100vw - 120px) / 6) * 2);
-  }
-
+  
   &__text {
+    grid-column: 1 / 2;
     padding-right: 30px;
   }
 
   &__skills {
+    grid-column: 2 / 4;
     position: relative;
     background-color: vars.$color-background-light;
     border-radius: 10px;
