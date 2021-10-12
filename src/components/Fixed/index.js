@@ -1,42 +1,51 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import './styles.scss';
 
-import gitHub from '../../assets/svg/github.svg';
-import linkedIn from '../../assets/svg/linkedin.svg';
-import twitter from '../../assets/svg/twitter.svg';
+import { ReactComponent as GitHub } from '../../assets/svg/github.svg';
+import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
+import { ReactComponent as Twitter } from '../../assets/svg/twitter.svg';
+
+import {
+  socialsVariants, 
+  emailVariants
+} from '../../animations';
 
 const Fixed = () => {
   return (
-    <div className="fixed">
-      <div className="fixed__socials">
+    <div
+      className="fixed"
+      >
+      <motion.div
+        className="fixed__socials"
+        initial="hidden"
+        animate="visible"
+        variants={ socialsVariants }
+      >
         <div className="fixed__social">
           <a href="https://github.com/Corxys" target="_blank" rel="noreferrer">
-            <img 
-              src={ gitHub }
-              alt="logotype of github"
-            />
+            <GitHub />
           </a>
         </div>
         <div className="fixed__social">
           <a href="https://www.linkedin.com/in/jenny-lee-boulanger-7aa3b8b9/" target="_blank" rel="noreferrer">
-            <img
-              src={ linkedIn }
-              alt="logotype of linkedin"
-            />
+            <LinkedIn />
           </a>
         </div>
         <div className="fixed__social">
           <a href="https://twitter.com/blngrjnn" target="_blank" rel="noreferrer">
-            <img 
-              src={ twitter }
-              alt="logotype of twitter"
-            />
+            <Twitter />
           </a>
         </div>
-      </div>
-      <div className="fixed__contact">
-      <span className="fixed__contact--blue">
+      </motion.div>
+      <motion.div
+        className="fixed__contact"
+        initial="hidden"
+        animate="visible"
+        variants={ emailVariants }
+      >
+        <span className="fixed__contact--blue">
         { 'const ' }
         </span>
         mail
@@ -49,7 +58,7 @@ const Fixed = () => {
           </a>
         </span>
         ;
-      </div>
+      </motion.div>
     </div>
   );
 };

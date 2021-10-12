@@ -18,5 +18,9 @@
         color: vars.$color-blue;
       }
     }
+
+    &__content {
+      margin-bottom: 3.125rem;
+    }
   }
 }

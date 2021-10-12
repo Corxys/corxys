@@ -9,6 +9,7 @@ export const projects = [
       'Redux',
       'Framer Motion',
       'Strapi',
+      'i18n',
     ],
     links: [
       {
@@ -21,18 +22,20 @@ export const projects = [
       },
     ],
     image: {
-      src: 'https://images.unsplash.com/photo-1628439900707-48d959859efe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
-      alt: '',
+      src: 'https://i.ibb.co/W5TSSFm/habiter-project-ban.png',
+      alt: 'Image de présentation du projet Habiter',
     }
   },
   {
     context: 'Étudiante',
     title: 'Diceroll',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu odio, blandit in arcu eu, iaculis pretium risus. Vestibulum a rhoncus neque. Suspendisse finibus maximus suscipit. Curabitur et consectetur risus. In efficitur arcu erat, ac dictum libero mattis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Un lanceur de dès tout ce qu\'il y a de plus classique, permettant de jeter jusqu\'à 10 dés, de changer le lancer de l\'un des dés et de conserver l\'historique de son dernier lancer. ',
     tools: [
-      'React',
-      'Sass',
-      'Redux',
+      'Node.js',
+      'Express',
+      'Dotenv',
+      'Sequelize',
+      'EJS',
     ],
     links: [
       {
@@ -41,22 +44,24 @@ export const projects = [
       },
       {
         name: 'HTTP',
-        src: 'https://diceroll.netlify.app',
+        src: 'https://corxys-diceroll.herokuapp.com/',
       },
     ],
     image: {
-      src: 'https://images.unsplash.com/photo-1628439900707-48d959859efe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
-      alt: '',
+      src: 'https://i.ibb.co/1R9H7nV/diceroll-project-ban.png',
+      alt: 'Image de présentation du projet Diceroll',
     } 
   },
   {
     context: 'Étudiante',
     title: 'Simon Game',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu odio, blandit in arcu eu, iaculis pretium risus. Vestibulum a rhoncus neque. Suspendisse finibus maximus suscipit. Curabitur et consectetur risus. In efficitur arcu erat, ac dictum libero mattis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'Le Simon Game consiste à répéter la séquence de couleur que Simon va faire le plus de fois possible. Vous perdez dès lors que vous faites une erreur.',
     tools: [
-      'React',
-      'Sass',
-      'Redux',
+      'Node.js',
+      'Express',
+      'Dotenv',
+      'Sequelize',
+      'EJS',
     ],
     links: [
       {
@@ -65,36 +70,12 @@ export const projects = [
       },
       {
         name: 'HTTP',
-        src: 'https://simon-game.netlify.app',
+        src: 'https://corxys-simon-game.herokuapp.com/',
       },
     ],
     image: {
-      src: 'https://images.unsplash.com/photo-1628439900707-48d959859efe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
-      alt: '',
-    } 
-  },
-  {
-    context: 'Étudiante',
-    title: 'Convertisseur de monnaies',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu odio, blandit in arcu eu, iaculis pretium risus. Vestibulum a rhoncus neque. Suspendisse finibus maximus suscipit. Curabitur et consectetur risus. In efficitur arcu erat, ac dictum libero mattis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    tools: [
-      'React',
-      'Sass',
-      'Redux',
-    ],
-    links: [
-      {
-        name: 'GitHub',
-        src: 'https://github.com/Corxys/currency-converter',
-      },
-      {
-        name: 'HTTP',
-        src: 'https://currency-converter.netlify.app',
-      },
-    ],
-    image: {
-      src: 'https://images.unsplash.com/photo-1628439900707-48d959859efe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
-      alt: '',
+      src: 'https://i.ibb.co/BCD6Br5/simongame-project-ban.png',
+      alt: 'Image de présentation du projet Simon Says',
     } 
   },
 ];

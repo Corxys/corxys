@@ -61,12 +61,18 @@
     align-items: center;
     margin-right: 0.938rem;
 
-    img {
-      height: 19px;
+    svg {
+      height: 1.188rem;
+      fill: vars.$color-text;
     }
 
     &__text {
       margin: 0.313rem 0rem 0rem 0.938rem;
+      transition: 0.2s color;
+      
+      &:hover {
+        color: vars.$color-text;
+      }
     }
   }
 

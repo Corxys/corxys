@@ -3,9 +3,10 @@
 .whoami {
   grid-auto-rows: auto;
   
-  &__container {
+  &__content {
     display: grid;
-    grid-template-columns: repeat(2, calc((100% / 4) * 2));
+    grid-template-columns: repeat(2, calc(100% / 2));
+    grid-gap: 0rem;
     grid-column: 1 / -1;
   }
   
@@ -15,7 +16,7 @@
   }
 
   &__skills {
-    grid-column: 2 / 4;
+    grid-column: 2 / -1;
     position: relative;
     background-color: vars.$color-background-light;
     border-radius: 10px;

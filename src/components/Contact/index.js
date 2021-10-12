@@ -1,41 +1,85 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
 import './styles.scss';
 
 import Title from '../../partials/Title';
 
+import {
+  inViewOptions,
+  sectionVariants,
+  itemsSectionVariants,
+} from '../../animations';
+
+
 const Contact = () => {
+  const controls = useAnimation();
+
+  const { ref, inView } = useInView(inViewOptions);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <section id="contact" className="contact">
-      <div className="contact__title">
-        <Title number={ '02.' } text={ 'Contact' } />
-      </div>
-      <div className="contact__container">
-        <p className="contact__text">
-          Vous souhaitez collaborer avec moi pour un projet personnel ou professionnel ? Vous êtes au bon endroit. Même si je suis plutôt à la recherche d'une société pour m'accueillir, je reste disponible pour des missions en freelance et serait ravie de vous aider.
-          <button className="contact__text__button">
-            Contactez-moi
-          </button>
-        </p>
-        <div className="contact__infos">
-          <div className="contact__infos__email">
-            <div className="contact__infos__email__title">
-              Email
-            </div>
-            <div className="contact__infos__email__address">
-              jennblngr@gmail.com
-            </div>
-          </div>
-          <div className="contact__infos__tel">
-            <div className="contact__infos__tel__title">
-              Tél.
-            </div>
-            <div className="contact__infos__tel__number">
-              +(33) 06 17 83 32 51
-            </div>
-          </div>
+      <motion.div
+        className="contact__container"
+        initial="hidden"
+        animate={ controls }
+        variants={ sectionVariants }
+        >
+        <div
+          className="contact__title"
+          ref={ ref }
+        >
+          <Title number={ '02.' } text={ 'Contact' } />
         </div>
-      </div>
+        <div className="contact__content">
+          <motion.div
+            className="contact__text"
+            variants={ itemsSectionVariants }
+          >
+            <p className="contact__text__paragraph">
+              Vous souhaitez collaborer avec moi pour un projet personnel ou professionnel ? Vous êtes au bon endroit. Même si je suis plutôt à la recherche d'une société pour m'accueillir, je reste disponible pour des missions en freelance et serait ravie de vous aider.
+            </p>
+            <a href="mailto:jennblngr@gmail.com">
+              <button className="contact__text__button">
+                Contactez-moi
+              </button>
+            </a>
+          </motion.div>
+          <motion.div
+            className="contact__infos"
+            variants={ itemsSectionVariants }
+          >
+            <div className="contact__infos__email">
+              <div className="contact__infos__email__title">
+                Email
+              </div>
+              <a href="mailto:jennblngr@gmail.com" className="contact__infos__email__address">
+                jennblngr@gmail.com
+              </a>
+            </div>
+            <div className="contact__infos__tel">
+              <div className="contact__infos__tel__title">
+                Tél.
+              </div>
+              <div className="contact__infos__tel__number">
+                <a href="tel:+33617833251">
+                  +(33) 06 17 83 32 51
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   )
 };

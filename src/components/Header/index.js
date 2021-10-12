@@ -1,11 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, useViewportScroll } from 'framer-motion';
 
 import './styles.scss';
 
+import {
+  itemsNavBarVariants
+} from '../../animations';
+
 const Header = () => {
+  const { scrollY } = useViewportScroll();
+  const [showHeader, setShowHeader] = useState(false);
+
+  const navBarStyleAboveContent = {
+    backgroundColor: '#272822de',
+    boxShadow: '0px 4px 15px 0px rgba(0,0,0,0.38)'
+  };
+
+  const update = () => {
+    if (scrollY?.current < scrollY?.prev) {
+      setShowHeader(false);
+    } else if (
+      scrollY?.current > 50
+      &&
+      scrollY?.current > scrollY?.prev
+    ) {
+      setShowHeader(true);
+    }
+  };
+
+  useEffect(() => {
+    return scrollY.onChange(() => update());
+  });
+
+  const visibilityNavBarVariants = {
+    hidden: {
+      opacity: 0,
+      y: -110.5,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'tween',
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="header">
-      <div className="header__logo">
+    <motion.div
+      className="header"
+      initial="hidden"
+      animate={ showHeader ? "hidden" : "visible" }
+      variants={ visibilityNavBarVariants }
+      style={ scrollY?.current > 200 ? navBarStyleAboveContent : '' }
+    >
+      <motion.div
+        className="header__logo"
+        variants={ itemsNavBarVariants }
+      >
         <a href="#home">
           { '<' }
           <span className="header__logo--blue">
@@ -13,33 +67,44 @@ const Header = () => {
           </span>
           { ' />' }
         </a>
-      </div>
+      </motion.div>
       <nav className="header__navbar">
-        <ul className="header__navbar__items">
-          <li className="header__navbar__item">
+        <motion.ul
+          className="header__navbar__items"
+        >
+          <motion.li 
+            className="header__navbar__item"
+            variants={ itemsNavBarVariants }  
+          >
             <a href="#whoami">
               <span className="header__navbar__item--blue">
                 00.
               </span> Qui suis-je ?
             </a>
-          </li>
-          <li className="header__navbar__item">
+          </motion.li>
+          <motion.li 
+            className="header__navbar__item"
+            variants={ itemsNavBarVariants }  
+          >
             <a href="#projects">
               <span className="header__navbar__item--blue">
                 01.
               </span> Projets
             </a>
-          </li>
-          <li className="header__navbar__item">
+          </motion.li>
+          <motion.li 
+            className="header__navbar__item"
+            variants={ itemsNavBarVariants }  
+          >
             <a href="#contact">
               <span className="header__navbar__item--blue">
                 02.
               </span> Contact
             </a>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </nav>
-    </div>
+    </motion.div>    
   )
 };
 
