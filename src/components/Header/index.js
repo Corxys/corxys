@@ -4,7 +4,8 @@ import { motion, useViewportScroll } from 'framer-motion';
 import './styles.scss';
 
 import {
-  itemsNavBarVariants
+  itemsNavBarVariants,
+  visibilityNavBarVariants
 } from '../../animations';
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
 
   const navBarStyleAboveContent = {
     backgroundColor: '#272822de',
-    boxShadow: '0px 4px 15px 0px rgba(0,0,0,0.38)'
+    boxShadow: '0px 4px 15px 0px rgba(0,0,0,0.20)'
   };
 
   const update = () => {
@@ -31,22 +32,6 @@ const Header = () => {
   useEffect(() => {
     return scrollY.onChange(() => update());
   });
-
-  const visibilityNavBarVariants = {
-    hidden: {
-      opacity: 0,
-      y: -110.5,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'tween',
-        staggerChildren: 0.3,
-        delayChildren: 0.5,
-      },
-    },
-  };
 
   return (
     <motion.div

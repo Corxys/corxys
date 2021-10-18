@@ -80,3 +80,27 @@ h2 {
     padding: calc(100% / 6);
   }
 }
+
+@media all and (max-device-width: 480px) {
+  body {
+    width: 100%;
+  }
+
+  .home, .whoami, .projects, .contact {
+    height: 100%;
+    padding: 100px 0px;
+
+    &__container {
+      grid-template-columns: repeat(2, calc(100% / 2));
+      padding: 0px;
+    }
+  }
+
+  .home {
+    padding-top: 150px;
+  }
+
+  .contact {
+    padding-bottom: 300px;
+  }
+}

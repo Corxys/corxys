@@ -54,3 +54,9 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .header {
+    display: none;
+  }
+}

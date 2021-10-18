@@ -12,6 +12,9 @@ import {
   itemsSectionVariants,
 } from '../../animations';
 
+import { ReactComponent as Twitter } from '../../assets/svg/twitter.svg';
+import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
+import { ReactComponent as GitHub } from '../../assets/svg/github.svg';
 
 const Contact = () => {
   const controls = useAnimation();
@@ -80,6 +83,25 @@ const Contact = () => {
           </motion.div>
         </div>
       </motion.div>
+      <div className="contact__footer">
+        <div className="contact__footer__socials">
+          <div className="contact__footer__social">
+            <a href="https://github.com/Corxys" target="_blank" rel="noreferrer">
+              <GitHub />
+            </a>
+          </div>
+          <div className="contact__footer__social">
+            <a href="https://www.linkedin.com/in/jenny-lee-boulanger-7aa3b8b9/" target="_blank" rel="noreferrer">
+              <LinkedIn />
+            </a>
+          </div>
+          <div className="contact__footer__social">
+            <a href="https://twitter.com/blngrjnn" target="_blank" rel="noreferrer">
+              <Twitter />
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   )
 };

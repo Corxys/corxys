@@ -21,6 +21,8 @@ import xd from '../../assets/svg/xd.svg';
 import figma from '../../assets/svg/figma.svg';
 
 import {
+  sectionVariants,
+  itemsSectionVariants,
   inViewOptions
 } from '../../animations';
 
@@ -37,35 +39,6 @@ const WhoAmI = () => {
       controls.start('hidden');
     }
   }, [controls, inView]);
-
-  const sectionVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        delay: 0.5,
-        staggerChildren: 0.5,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const itemsSectionVariants = {
-    hidden: {
-      opacity: 0,
-      y: -20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-      },
-    },
-  };
 
   return (
     <section id="whoami" className="whoami">

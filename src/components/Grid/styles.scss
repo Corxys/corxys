@@ -38,8 +38,42 @@
   &--sixth {
     left: calc(((100vw - (120px + 6px)) / 6) * 5);
   }
-
   &--last {
     right: 0px;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .lines {
+    width: calc(100vw - 80px);
+  }
+
+  .line {
+    &--first {
+      left: 0px;
+    }
+  
+    &--second {
+      left: calc((100vw - 80px) / 6);
+    }
+  
+    &--third {
+      left: calc(((100vw - 80px) / 6) * 2);
+    }
+  
+    &--fourth {
+      left: calc(((100vw - 80px) / 6) * 3);
+    }
+  
+    &--fifth {
+      left: calc(((100vw - 80px) / 6) * 4);
+    }
+  
+    &--sixth {
+      left: calc(((100vw - 80px) / 6) * 5);
+    }
+    &--last {
+      right: 0px;
+    }
   }
 }

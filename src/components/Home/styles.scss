@@ -24,3 +24,16 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .home {
+    &__text {
+      grid-column: 1 / -1;
+
+      &__name {
+        font-size: 3.25rem;
+        line-height: 3.05rem;
+      }
+    }
+  }
+}

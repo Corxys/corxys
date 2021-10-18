@@ -33,7 +33,7 @@ export const sectionVariants = {
     transition: {
       type: 'spring',
       delay: 0.5,
-      staggerChildren: 0.3,
+      staggerChildren: 0.5,
       delayChildren: 0.5,
     },
   },
@@ -86,6 +86,22 @@ export const emailVariants = {
     transition: {
       type: 'spring',
       delay: navBarVariants.visible.transition.delay + (0.3 * 4) + sectionVariants.visible.transition.delay,
+    },
+  },
+};
+
+export const visibilityNavBarVariants = {
+  hidden: {
+    opacity: 0,
+    y: -110.5,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'tween',
+      staggerChildren: 0.3,
+      delayChildren: 0.5,
     },
   },
 };

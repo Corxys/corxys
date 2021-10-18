@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
@@ -18,12 +18,23 @@ const Project = ({ data }) => {
           variants={ itemsSectionVariants }
         >
           <div className="project__header__context">
-            { data.context }
+            { data?.context }
           </div>
           <div className="project__header__title">
-            <a href={ data.links[1].src } target="_blank" rel="noreferrer">
-              { data.title }
-            </a>
+            { data?.links[1] &&
+              (
+                <a href={ data.links[1].src } target="_blank" rel="noreferrer">
+                  { data?.title }
+                </a>
+              )
+            }
+            { !data?.links[1] &&
+              (
+                <>
+                  { data?.title }
+                </>
+              )
+            }
           </div>
         </motion.div>
         <motion.div
@@ -31,11 +42,11 @@ const Project = ({ data }) => {
           variants={ itemsSectionVariants }
         >
           <p className="project__description__content">
-            { data.description }
+            { data?.description }
           </p>
           <div className="project__description__tools">
             {
-              data.tools.map((tool, index) => {
+              data?.tools.map((tool, index) => {
                 return (
                   <div key={ index } className="project__description__tool">
                     { tool }
@@ -50,7 +61,7 @@ const Project = ({ data }) => {
           variants={ itemsSectionVariants }
         >
           {
-            data.links[0] &&
+            data?.links[0] &&
             (
               <div className="project__link">
                 <GitHub />
@@ -63,13 +74,13 @@ const Project = ({ data }) => {
             )
           }
           {
-            data.links[1] &&
+            data?.links[1] &&
             (
               <div className="project__link">
                 <Link />
                 <div className="project__link__text">
-                  <a href={ data?.links[1].src } target="_blank" rel="noreferrer">
-                    { data?.links[1].name }
+                  <a href={ data.links[1].src } target="_blank" rel="noreferrer">
+                    { data.links[1].name }
                   </a>
                 </div>
               </div>
@@ -81,16 +92,47 @@ const Project = ({ data }) => {
         className="project__image"
         variants={ itemsSectionVariants }
       >
-        <a href={ data.links[1].src} target="_blank" rel="noreferrer">
-          <img
-            className="project__image__src"
-            src={ data.image.src }
-            alt={ data.image.alt }
-          />
-        </a>
+        {
+          data?.links[1] &&
+            (
+              <a href={ data.links[1].src} target="_blank" rel="noreferrer">
+                <img
+                  className="project__image__src"
+                  src={ data.image.src }
+                  alt={ data.image.alt }
+                />
+              </a>
+            )
+        }
+        {
+          !data?.links[1] &&
+            (
+              <>
+                <img
+                  className="project__image__src"
+                  src={ data.image.src }
+                  alt={ data.image.alt }
+                />
+              </>
+            )
+        }
       </motion.div>
     </div>
   );
+};
+
+Project.propTypes = {
+  data: PropTypes.shape({
+    context: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.objectOf(PropTypes.string),
+    links: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      src: PropTypes.string,
+    })),
+    tools: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default Project;

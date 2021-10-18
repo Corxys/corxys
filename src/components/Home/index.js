@@ -63,7 +63,7 @@ const Home = () => {
               className="home__text__button"
               variants={ itemsSectionVariants }
             > 
-                Contactez-moi
+              Contactez-moi
             </motion.button>
           </a>
         </div>

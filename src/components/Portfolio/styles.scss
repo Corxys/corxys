@@ -2,6 +2,14 @@
   position: relative;
 
   &__container {
-    margin: 0px 60px;
+    margin: 0px 3.75rem;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .portfolio {
+    &__container {
+      margin: 0rem 2.5rem;
+    }
   }
 }
