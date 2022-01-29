@@ -5,6 +5,7 @@
   
   &__content {
     grid-column: 1 / -1;
+    overflow: hidden;
   }
 
   &__container {
@@ -25,7 +26,6 @@
     background-color: vars.$color-text;
     border-radius: 25px;
     margin: 0rem 0.625rem;
-    cursor: pointer;
 
     &--active {
       background-color: vars.$color-blue;

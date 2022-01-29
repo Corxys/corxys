@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import './styles.scss';
+
+import 'swiper/swiper.min.css';
 
 import Title from '../../partials/Title';
 
@@ -41,11 +44,28 @@ const Projects = () => {
       >
         <div
           ref={ ref }
-          className="projects__title">
+          className="projects__title"
+        >
           <Title number={ '01.' } text={ 'Projets' } />
         </div>
         <div className="projects__content">
-          <Project data={ projects[page] } />
+          <Swiper
+            className="projects__content-swiper"
+            spaceBetween={ 30 }
+            onSlideChange={(swiper) => {
+              setPage(swiper.activeIndex);
+            }}
+          >
+              {
+                projects.map((project, index) => {
+                  return (
+                    <SwiperSlide key={ index }>
+                      <Project id={ project.id } data={ project } />
+                    </SwiperSlide>
+                  )
+                })
+              }
+          </Swiper>
         </div>
         <div className="projects__pagination">
           {
@@ -62,9 +82,6 @@ const Projects = () => {
                   <div
                     key={ `page-${index}` }
                     className="projects__page"
-                    onClick={() => {
-                      setPage(index);
-                    }}
                   />
                 )
               }

@@ -6,19 +6,7 @@ import './styles.scss';
 
 import Title from '../../partials/Title';
 
-import html from '../../assets/svg/html.svg';
-import css from '../../assets/svg/css.svg';
-import js from '../../assets/svg/js.svg';
-import react from '../../assets/svg/react.svg';
-import node from '../../assets/svg/node.svg';
-import psql from '../../assets/svg/psql.svg';
-import photoshop from '../../assets/svg/photoshop.svg';
-import illustrator from '../../assets/svg/illustrator.svg';
-import inDesign from '../../assets/svg/indesign.svg';
-import premierePro from '../../assets/svg/premierepro.svg';
-import afterEffects from '../../assets/svg/aftereffects.svg';
-import xd from '../../assets/svg/xd.svg';
-import figma from '../../assets/svg/figma.svg';
+import { skills } from '../../data/skills';
 
 import {
   sectionVariants,
@@ -84,94 +72,32 @@ const WhoAmI = () => {
               </span>
             </div>
             <div className="whoami__skills__categories">
-              <h2 className="whoami__skills__subtitle">
-                Développement web
-              </h2>
-              <div className="whoami__skills__list">
-                <div className="whoami__skills__item">
-                  <img
-                    src={ html }
-                    alt="logotype of HTML"
-                  /> HTML
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ css }
-                    alt="logotype of CSS"
-                  /> CSS
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ js }
-                    alt="logotype of JavaScript"
-                  /> JavaScript (ES5, ES6)
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ react }
-                    alt="logotype of React"
-                  /> React
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ node }
-                    alt="logotype of Node.js"
-                  /> Node.js
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ psql }
-                    alt="logotype of PostgreSQL"
-                  /> PostgreSQL
-                </div>
-              </div>
-              <h2 className="whoami__skills__subtitle">
-                Design graphique
-              </h2>
-              <div className="whoami__skills__list">
-                <div className="whoami__skills__item">
-                  <img
-                    src={ photoshop }
-                    alt="logotype of Adobe Photoshop"
-                  /> Photoshop
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ illustrator }
-                    alt="logotype of Adobe Illustrator"
-                  /> Illustrator
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ inDesign }
-                    alt="logotype of Adobe InDesign"
-                  /> InDesign
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ premierePro }
-                    alt="logotype of Adobe Premiere Po"
-                  /> Premiere Pro
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ afterEffects }
-                    alt="logotype of Adobe After Effects"
-                  /> After Effects
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ xd }
-                    alt="logotype of Adobe XD"
-                  /> XD
-                </div>
-                <div className="whoami__skills__item">
-                  <img
-                    src={ figma }
-                    alt="logotype of Figma"
-                  /> Figma
-                </div>
-              </div>
+              {
+                skills.map((skill) => {
+                  return (
+                    <div key={skill.category }>
+                      <h2 className="whoami__skills__subtitle">
+                        { skill.category }
+                      </h2>
+                      <div className="whoami__skills__list">
+                        {
+                          skill.tools.map((tool) => {
+                            return (
+                              <div key={ 'item-' + tool.title } className="whoami__skills__item">
+                                <img
+                                  key={ 'item-img-' + tool.title }
+                                  src={ tool.src }
+                                  alt={ tool.alt }
+                                /> { tool.title }
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  )
+                })
+              }
             </div>
             <div className="whoami__skills__title">
               <span className="whoami__skills__title--yellow">{ '}' }</span>

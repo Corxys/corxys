@@ -5,6 +5,7 @@ import './styles/index.scss';
 
 import Portfolio from './components/Portfolio';
 
+
 const rootReactElement = (
   <Portfolio />
 );

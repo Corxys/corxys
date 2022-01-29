@@ -64,7 +64,7 @@ const Project = ({ data }) => {
             data?.links[0] &&
             (
               <div className="project__link">
-                <GitHub />
+                { data.links[0].name === 'GitHub' ? <GitHub /> : <Link /> }
                 <div className="project__link__text">
                   <a href={ data.links[0].src } target="_blank" rel="noreferrer">
                     { data.links[0].name }
@@ -77,7 +77,7 @@ const Project = ({ data }) => {
             data?.links[1] &&
             (
               <div className="project__link">
-                <Link />
+                { data.links[1].name === 'GitHub' ? <GitHub /> : <Link /> }
                 <div className="project__link__text">
                   <a href={ data.links[1].src } target="_blank" rel="noreferrer">
                     { data.links[1].name }

@@ -1,3 +1,9 @@
+import habiter from '../assets/images/habiter-project-ban.png';
+import oFourneaux from '../assets/images/ofourneaux-project-ban.png';
+import diceroll from '../assets/images/diceroll-project-ban.png';
+import simonGame from '../assets/images/simongame-project-ban.png';
+import myWebFactory from '../assets/images/mywebfactory-project-ban.png';
+
 export const projects = [
   {
     context: 'Freelance',
@@ -22,8 +28,58 @@ export const projects = [
       },
     ],
     image: {
-      src: 'https://i.ibb.co/W5TSSFm/habiter-project-ban.png',
+      src: habiter,
       alt: 'Image de présentation du projet Habiter',
+    }
+  },
+  {
+    context: 'Étudiante',
+    title: 'O\'Fourneaux',
+    description: 'Quand on a un emploi du temps charge, qu\'on commence une formation intensive de 5 mois, qu\'on est parent, ou que l\'on fait face à toute autre contrainte du quotidien, il est plus difficile de trouver le temps de réfléchir à ses repas. C\'est pourquoi je vous présente cette application génératrice de recettes, qui vous permettra d\'être plus serein et plus organisé jour après jour. (Développé en équipe, 3 dev front et 2 dev back)',
+    tools: [
+      'React',
+      'Sass',
+      'Redux',
+      'Firebase',
+      'Axios',
+      'Slugify',
+      'Commitizen',
+    ],
+    links: [
+      {
+        name: 'GitHub',
+        src: 'https://github.com/Corxys/ofourneaux-post-apo',
+      },
+      {
+        name: 'HTTP',
+        src: 'https://ofourneaux.xyz/',
+      },
+    ],
+    image: {
+      src: oFourneaux,
+      alt: 'Image de présentation du projet O\'Fourneaux',
+    }
+  },
+  {
+    context: 'Freelance',
+    title: 'My Web Factory',
+    description: 'My Web Factory est né de l\'envie d\'unir des compétences techniques et humaines pour aider des particuliers et des professionnels à avoir de la visibilité sur le web. Nous avons donc créé un collectif de freelances, et développé notre site vitrine afin de nous présenter.',
+    tools: [
+      'Vue.js',
+      'Sass',
+      'Vuex',
+      'GSAP',
+      'Symfony',
+    ],
+    links: [
+      {
+        name: 'HTTP',
+        src: 'https://mywebfactory.fr',
+      },
+    ],
+    image: {
+      src: myWebFactory,
+      alt: 'Image de présentation du projet O\'Fourneaux',
     }
   },
   {
@@ -48,7 +104,7 @@ export const projects = [
       },
     ],
     image: {
-      src: 'https://i.ibb.co/1R9H7nV/diceroll-project-ban.png',
+      src: diceroll,
       alt: 'Image de présentation du projet Diceroll',
     } 
   },
@@ -74,7 +130,7 @@ export const projects = [
       },
     ],
     image: {
-      src: 'https://i.ibb.co/BCD6Br5/simongame-project-ban.png',
+      src: simonGame,
       alt: 'Image de présentation du projet Simon Says',
     } 
   },

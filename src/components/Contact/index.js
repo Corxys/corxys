@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { sendForm } from "@emailjs/browser";
 
 import './styles.scss';
 
@@ -16,7 +17,52 @@ import { ReactComponent as Twitter } from '../../assets/svg/twitter.svg';
 import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
 import { ReactComponent as GitHub } from '../../assets/svg/github.svg';
 
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_USER_ID;
+
 const Contact = () => {
+  const [toSend, setToSend] = useState({
+    name: '',
+    email: '',
+    telephone: '',
+    message: '',
+  });
+  const [formSend, setFormSend] = useState({
+    isVisible: false,
+    message: '',
+  });
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    sendForm(SERVICE_ID, TEMPLATE_ID, '#form', USER_ID)
+      .then((response) => {
+        setFormSend({ ...formSend, isVisible: true, message: 'Formulaire envoyé !' });
+        setToSend({
+          name: '',
+          email: '',
+          telephone: '',
+          message: '',
+        });
+
+        setTimeout(() => {
+          setFormSend({ ...formSend, isVisible: false });
+        }, 3000);
+
+        // console.log('SUCCESS!', response.status, response.text);
+      })
+      .catch((error) => {
+        setFormSend({ ...formSend, message: 'Formulaire non envoyé :/' });
+
+        // console.log('FAILED!', error);
+      });
+  };
+
+  const handleChange = (event) => {
+    setToSend({ ...toSend, [event.target.name]: event.target.value });
+  };
+
   const controls = useAnimation();
 
   const { ref, inView } = useInView(inViewOptions);
@@ -52,11 +98,68 @@ const Contact = () => {
             <p className="contact__text__paragraph">
               Vous souhaitez collaborer avec moi pour un projet personnel ou professionnel ? Vous êtes au bon endroit. Même si je suis plutôt à la recherche d'une société pour m'accueillir, je reste disponible pour des missions en freelance et serait ravie de vous aider.
             </p>
-            <a href="mailto:jennblngr@gmail.com">
-              <button className="contact__text__button">
-                Contactez-moi
-              </button>
-            </a>
+              <form
+                id="form"
+                className="contact__form"
+                onSubmit={ onSubmit }
+              >
+                <input
+                  className="contact__form-input"
+                  type="text"
+                  name="name"
+                  placeholder="Nom / Prénom"
+                  value={ toSend.name }
+                  onChange={ handleChange }
+                  required
+                />
+                <input
+                  className="contact__form-input"
+                  type="email"
+                  name="email"
+                  placeholder="Adresse mail"
+                  value={ toSend.email }
+                  onChange={ handleChange }
+                  required
+                />
+                <input
+                  className="contact__form-input"
+                  type="tel"
+                  name="telephone"
+                  placeholder="Numéro de téléphone"
+                  value={ toSend.telephone }
+                  onChange={ handleChange }
+                />
+                <textarea
+                  className="contact__form-textarea"
+                  type="textarea"
+                  name="message"
+                  placeholder="Message"
+                  value={ toSend.message }
+                  onChange={ handleChange }
+                  required
+                />
+                <div className="contact__form__footer">
+                  <button className="contact__form__button" type="submit">
+                    Envoyer
+                  </button>
+                  <AnimatePresence>
+                    {
+                      formSend.isVisible &&
+                      (
+                        <motion.p
+                          className="contact__form__message"
+                          animate={{ opacity: 1 }}
+                          initial={{ opacity: 0 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ type: 'spring' }}
+                        >
+                          { formSend.message }
+                        </motion.p>
+                      )
+                    }
+                  </AnimatePresence>
+                </div>
+              </form>
           </motion.div>
           <motion.div
             className="contact__infos"
@@ -76,10 +179,11 @@ const Contact = () => {
               </div>
               <div className="contact__infos__tel__number">
                 <a href="tel:+33617833251">
-                  +(33) 06 17 83 32 51
+                  +(33) 6 17 83 32 51
                 </a>
               </div>
             </div>
+
           </motion.div>
         </div>
       </motion.div>
