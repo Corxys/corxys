@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
+// swiper
+import SwiperCore, { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/navigation/navigation.min.css';
 
 import './styles.scss';
-
-import 'swiper/swiper.min.css';
 
 import Title from '../../partials/Title';
 
@@ -17,6 +21,8 @@ import {
   inViewOptions,
   sectionVariants
 } from '../../animations';
+
+SwiperCore.use([Pagination]);
 
 const Projects = () => {
   const controls = useAnimation();
@@ -51,42 +57,26 @@ const Projects = () => {
         <div className="projects__content">
           <Swiper
             className="projects__content-swiper"
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
             spaceBetween={ 30 }
-            onSlideChange={(swiper) => {
-              setPage(swiper.activeIndex);
+            onSwiper={(swiper) => {
+              console.log('swiper !!!', swiper);
+            }}
+            onSlideChange={() => {
+              console.log('slide change !!!');
             }}
           >
-              {
-                projects.map((project, index) => {
-                  return (
-                    <SwiperSlide key={ index }>
-                      <Project id={ project.id } data={ project } />
-                    </SwiperSlide>
-                  )
-                })
-              }
+            {
+              projects.map((project, index) => {
+                return (
+                  <SwiperSlide id={ 'project-' + project.id } key={ index }>
+                    <Project data={ project } />
+                  </SwiperSlide>
+                )
+              })
+            }
           </Swiper>
-        </div>
-        <div className="projects__pagination">
-          {
-            projects.map((project, index) => {
-              if (index === page) {
-                return (
-                  <div
-                    key={ `page-${index}` }
-                    className="projects__page projects__page--active"
-                  />
-                )
-              } else {
-                return (
-                  <div
-                    key={ `page-${index}` }
-                    className="projects__page"
-                  />
-                )
-              }
-            })
-          }
         </div>
       </motion.div>
     </section>

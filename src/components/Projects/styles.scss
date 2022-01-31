@@ -6,6 +6,11 @@
   &__content {
     grid-column: 1 / -1;
     overflow: hidden;
+
+    &-swiper {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &__container {
@@ -19,16 +24,30 @@
     margin-top: 2.5em;
     grid-column: 1 / -1;
   }
+}
 
-  &__page {
-    height: 10px;
-    width: 10px;
-    background-color: vars.$color-text;
-    border-radius: 25px;
-    margin: 0rem 0.625rem;
+.swiper {
+  &-container {
+    position: static;
+  }
 
-    &--active {
-      background-color: vars.$color-blue;
+  &-pagination {
+    position: static;
+    margin-top: 30px;
+
+    &-bullet {
+      height: 10px;
+      width: 10px;
+      background-color: vars.$color-text;
+      border-radius: 25px;
+
+      &-active {
+        background-color: vars.$color-blue;
+      }
     }
   }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0px 10px;
 }

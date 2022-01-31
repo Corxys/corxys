@@ -6,6 +6,7 @@ import myWebFactory from '../assets/images/mywebfactory-project-ban.png';
 
 export const projects = [
   {
+    id: 1,
     context: 'Freelance',
     title: 'Habiter',
     description: 'Une exposition virtuelle et participative, disponible en ligne jusqu’en juin 2022. Elle rassemble divers témoignages de personnes affectées par les effets du changement climatique à travers le monde. Ma mission a consisté à développer le site à partir de la maquette proposée par le graphiste.',
@@ -33,6 +34,7 @@ export const projects = [
     }
   },
   {
+    id: 2,
     context: 'Étudiante',
     title: 'O\'Fourneaux',
     description: 'Quand on a un emploi du temps charge, qu\'on commence une formation intensive de 5 mois, qu\'on est parent, ou que l\'on fait face à toute autre contrainte du quotidien, il est plus difficile de trouver le temps de réfléchir à ses repas. C\'est pourquoi je vous présente cette application génératrice de recettes, qui vous permettra d\'être plus serein et plus organisé jour après jour. (Développé en équipe, 3 dev front et 2 dev back)',
@@ -61,6 +63,7 @@ export const projects = [
     }
   },
   {
+    id: 3,
     context: 'Freelance',
     title: 'My Web Factory',
     description: 'My Web Factory est né de l\'envie d\'unir des compétences techniques et humaines pour aider des particuliers et des professionnels à avoir de la visibilité sur le web. Nous avons donc créé un collectif de freelances, et développé notre site vitrine afin de nous présenter.',
@@ -83,6 +86,7 @@ export const projects = [
     }
   },
   {
+    id: 4,
     context: 'Étudiante',
     title: 'Diceroll',
     description: 'Un lanceur de dès tout ce qu\'il y a de plus classique, permettant de jeter jusqu\'à 10 dés, de changer le lancer de l\'un des dés et de conserver l\'historique de son dernier lancer. ',
@@ -109,6 +113,7 @@ export const projects = [
     } 
   },
   {
+    id: 5,
     context: 'Étudiante',
     title: 'Simon Game',
     description: 'Le Simon Game consiste à répéter la séquence de couleur que Simon va faire le plus de fois possible. Vous perdez dès lors que vous faites une erreur.',
